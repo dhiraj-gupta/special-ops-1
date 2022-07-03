@@ -1,3 +1,4 @@
+
 import sys
 from urllib import response
 import requests
@@ -27,16 +28,14 @@ data = {}
 data_error = {}
 
 with open('domains.csv') as csv_file:
-	csv_reader = csv.reader(csv_file, delimiter=',')
-	for row in csv_reader:
-		apex_value = "NONE"
-		domain = ' '.join([str(elem) for elem in row ])
-		
-		res = get_tld(url, as_object=True)
-    	if res.fld:
-		apex_value= res.fld
-	
-	data[domain] = [apex_value]
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+        apex_value = "NONE"
+        domain = ' '.join([str(elem) for elem in row ])
+        res = get_tld(url, as_object=True)
+        if res.fld:
+            apex_value= res.fld
+        data[domain] = [apex_value]
 
 
 with open("response-domain-tld.csv", "w") as out_file:
