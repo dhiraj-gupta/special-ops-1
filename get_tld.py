@@ -33,10 +33,10 @@ with open('domains.csv') as csv_file:
 		domain = ' '.join([str(elem) for elem in row ])
 		
 		res = get_tld(url, as_object=True)
-    if res.fld:
-		  apex_value= res.fld
-    
-    data[domain] = [apex_value]
+    	if res.fld:
+		apex_value= res.fld
+	
+	data[domain] = [apex_value]
 
 
 with open("response-domain-tld.csv", "w") as out_file:
