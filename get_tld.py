@@ -31,7 +31,7 @@ with open('domains.csv') as csv_file:
     for row in csv_reader:
         apex_value = "NONE"
         domain = ' '.join([str(elem) for elem in row ])
-	url= "https://" + domain
+        url = "https://" + domain
         res = get_tld(url, as_object=True)
         if res.fld:
             apex_value= res.fld
