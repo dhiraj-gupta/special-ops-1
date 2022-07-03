@@ -8,8 +8,7 @@ import urllib
 import validators
 import csv
 import socket
-import dnspython as dns
-import dns.resolver
+
 from tld import get_tld
 
 
